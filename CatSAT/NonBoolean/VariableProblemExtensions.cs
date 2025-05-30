@@ -102,9 +102,9 @@ namespace CatSAT
                 } else
                 {
                     var v = s.Problem.VariableNamed(name);
-                    if ((object)v != null)
+                    if ((object)v != null && s.DefinesVariable(v))
                     {
-                        f.SetValue(target, s.DefinesVariable(v)?s[v]:null);
+                        f.SetValue(target, s[v]);
                     }
                 }
             }
